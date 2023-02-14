@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+	<aside class="sidenav">
+		<p>Select country</p>
+		<form method="POST" action="#">
+			<div class="dropdown">
+				<select name="country" action="/" class='dropbtn'>
+					<div class="dropdown-content">
+						{% for country in table['country'].unique() %}
+						<option value="{{ country }}">{{ country }}</option>
+						{% endfor %}
+					</div>
+				</select>
+				<input type="submit" value="Select">
+			</div>
+		</form>
+	</aside>
+</body>
+{% endblock %}
